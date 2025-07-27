@@ -1,0 +1,16 @@
+{
+  "name": "course-selling-application",
+  "version": "1.0.0",
+  "description": "This Is a course selling application built with Node.js and Express.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^20.19.4"
+  }
+}
