@@ -1,14 +1,16 @@
-import express from 'express';
+// Package Imports.
+import express from 'express';  
 import path from 'path';
 import dotenv from 'dotenv';
 dotenv.config();
 
 // Imports For Routes.
-import userRouter from './routes/userRoutes.js';
-import courseRouter from './routes/courseRoutes.js';
+import { userRouter } from './routes/user.Routes.js';
+import { courseRouter } from './routes/course.Routes.js';
+import { adminRouter } from './routes/admin.Routes.js';
+
 
 // Initialize Express App
-const __dirname = path.resolve();
 const app = express();
 
 app.use(express.json());
@@ -21,10 +23,12 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 
-// This is Sample home Page Route.
-// app.get('/', (req, res) => {
-//     res.send('Welcome to the Course Selling Application');
-// });
+
+// This is Sample home Page Route || Testing Route.
+app.get('/', (req, res) => {
+    res.send('<h1>Welcome to the Course Selling Application</h1>');
+
+});
 
 
 // This Is Signin And Signup Page Route.
@@ -62,16 +66,13 @@ app.set('views', 'views');
 // Common Way Of rounting.
 
 
+// app.use("/api/v1/users", userRouter);
+// app.use("/api/v1/courses", courseRouter);
+
+
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/admin", adminRouter);
 app.use("/api/v1/courses", courseRouter);
-
-
-
-
-
-
-
-
 
 
 
