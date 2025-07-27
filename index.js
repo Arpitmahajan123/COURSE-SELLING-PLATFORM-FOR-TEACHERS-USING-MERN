@@ -3,7 +3,12 @@ import path from 'path';
 import dotenv from 'dotenv';
 dotenv.config();
 
+// Imports For Routes.
+import userRouter from './routes/userRoutes.js';
+import courseRouter from './routes/courseRoutes.js';
 
+// Initialize Express App
+const __dirname = path.resolve();
 const app = express();
 
 app.use(express.json());
@@ -17,44 +22,55 @@ app.set('views', 'views');
 
 
 // This is Sample home Page Route.
-app.get('/', (req, res) => {
-    res.send('Welcome to the Course Selling Application');
-});
+// app.get('/', (req, res) => {
+//     res.send('Welcome to the Course Selling Application');
+// });
 
 
 // This Is Signin And Signup Page Route.
-app.get('/users/signin', function(req, res) {
-    res.json({
-        message: 'User Sign In Page'
-    });
-});
+// app.post('/users/signin', function(req, res) {
+//     res.json({
+//         message: 'User Sign In Page'
+//     });
+// });
 
-app.get('/users/signup', function(req, res) {
-    res.json({
-        message: 'User Sign Up Page'
-    });
-});
+// app.post('/users/signup', function(req, res) {
+//     res.json({
+//         message: 'User Sign Up Page'
+//     });
+// });
 
 
 // This Route For User Purchase Courses Page.
-app.get('/users/purchases', function(req, res) {
-    res.json({
-        message: 'User Purchase Courses Page'
-    });
-});
+// app.get('/users/purchases', function(req, res) {
+//     res.json({
+//         message: 'User Purchase Courses Page'
+//     });
+// });
 
 // This Route For All Courses Page.
-app.get('/courses', function(req, res) {
-    res.json({
-        message: 'User Courses Page'
-    });
-});
+// app.post('/courses/purchase', function(req, res) {
+//     res.json({
+//         message: 'User Courses And Purchase Page'
+//     });
+// });
 
-app.get('/users/signin', function(req, res) {
-    res.json({
-        message: 'User Sign In Page'
-    });
-});
+
+
+
+
+// Common Way Of rounting.
+
+
+app.use("/api/v1/users", userRouter);
+app.use("/api/v1/courses", courseRouter);
+
+
+
+
+
+
+
 
 
 
