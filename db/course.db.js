@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
 import { Mongoose } from 'mongoose';
 import { Schema } from 'mongoose';
-import ObjectId from "mongoose.Types.ObjectId"
+import ObjectId from "mongoose.Types.ObjectId";
+import { type } from 'os';
 
 
-const userSchema = new mongoose.Schema({
+const courseSchema = new mongoose.Schema({
     
     title: {
         type: String,
@@ -31,5 +32,6 @@ const userSchema = new mongoose.Schema({
     
 }, { timestamps: true });
 
-const User = mongoose.model('User', userSchema);
+export const CourseModel = mongoose.model('Course', courseSchema);
+
 

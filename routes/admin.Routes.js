@@ -1,5 +1,5 @@
 import express from 'express';
-import { Router } from 'express';
+import { AdminModel } from '../db/admin.db.js';
 
 const adminRouter = express.Router();
 
@@ -27,12 +27,10 @@ adminRouter.put('/changes/course', function (req, res) {
     });
 });
 
-
 adminRouter.get('/all/course', function (req, res) {
     res.json({
-        message: 'You Can Make Changes To Course As Admin'
+        message: 'You Can Get All Courses As Admin'
     });
 });
-
 
 export { adminRouter };

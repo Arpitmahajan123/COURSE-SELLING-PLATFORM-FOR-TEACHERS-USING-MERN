@@ -1,20 +1,16 @@
 import mongoose from 'mongoose';
+import { Mongoose } from 'mongoose';
+import { Schema } from 'mongoose';
+import ObjectId from "mongoose.Types.ObjectId";
+import { type } from 'os';
 
 
-const userSchema = new mongoose.Schema({
+const purchaseSchema = new mongoose.Schema({
     
-    Name: {
-        type: String,
-        required: true
-        
-    },
-
-    Password: {
-        type: String,
-        required: true
-    },
+    userId : ObjectId,
+    courseId : ObjectId
     
 }, { timestamps: true });
 
-const User = mongoose.model('User', userSchema);
+export const PurchaseModel = mongoose.model('Purchase', purchaseSchema);
 

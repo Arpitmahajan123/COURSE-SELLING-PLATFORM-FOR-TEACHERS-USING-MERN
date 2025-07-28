@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import { type } from 'os';
 
+
 const userSchema = new mongoose.Schema({
 
     email: {
@@ -26,4 +27,5 @@ const userSchema = new mongoose.Schema({
 
 }, { timestamps: true });
 
-const User = mongoose.model('User', userSchema);
+export const UserModel = mongoose.model('User', userSchema);
+
