@@ -10,12 +10,12 @@ courseRouter.post('/purchase', function(req, res) {
     });
 });
 
+
 courseRouter.post('/preview', function(req, res) {
     res.json({
         message: 'Courses Preview Page'
     });
 });
-    
 
 
 
